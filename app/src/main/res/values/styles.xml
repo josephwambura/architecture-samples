@@ -19,7 +19,7 @@
 
     <style name="AppTheme.OverlapSystemBar" parent="Base.AppTheme" />
 
-    <style name="Base.AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="Base.AppTheme" parent="Theme.Material3.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
@@ -36,5 +36,16 @@
         <item name="android:tint">@color/colorAccent</item>
     </style>
 
-    <style name="Toolbar" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="Toolbar" parent="ThemeOverlay.Material3.Light" />
+
+    <!--
+        The splash screen theme without any customization.
+        On API level 31 and above, this shows the app icon on the splash screen.
+        On API level 30 and below, this shows a default icon from the library.
+        See "Theme.App.SplashScreen.Animated" below for the backward-compatible splash screen.
+    -->
+    <style name="AppTheme.SplashScreen" parent="Theme.SplashScreen">
+        <!-- The 'core-splashscreen' switches the theme back to this after splash screen. -->
+        <item name="postSplashScreenTheme">@style/AppTheme.OverlapSystemBar</item>
+    </style>
 </resources>

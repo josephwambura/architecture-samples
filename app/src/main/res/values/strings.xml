@@ -44,6 +44,7 @@
         <item>@string/nav_active</item>
         <item>@string/nav_completed</item>
     </string-array>
+
     <string name="nav_all">All</string>
     <string name="nav_active">Active</string>
     <string name="nav_completed">Completed</string>

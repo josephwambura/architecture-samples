@@ -29,7 +29,7 @@
             type="com.example.android.architecture.blueprints.todoapp.tasks.TasksViewModel" />
     </data>
 
-    <LinearLayout
+    <com.google.android.material.circularreveal.CircularRevealLinearLayout
         android:layout_width="match_parent"
         android:layout_height="?android:attr/listPreferredItemHeight"
         android:orientation="horizontal"
@@ -39,7 +39,7 @@
         android:paddingTop="@dimen/list_item_padding"
         android:onClick="@{() -> viewmodel.openTask(task.id)}">
 
-        <CheckBox
+        <com.google.android.material.checkbox.MaterialCheckBox
             android:id="@+id/complete_checkbox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -47,15 +47,15 @@
             android:onClick="@{(view) -> viewmodel.completeTask(task, ((CompoundButton)view).isChecked())}"
             android:checked="@{task.completed}" />
 
-        <TextView
+        <com.google.android.material.textview.MaterialTextView
             android:id="@+id/title_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="@dimen/activity_horizontal_margin"
             android:layout_marginStart="@dimen/activity_horizontal_margin"
-            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
             android:text="@{task.titleForList}"
             app:completedTask="@{task.completed}" />
-    </LinearLayout>
+    </com.google.android.material.circularreveal.CircularRevealLinearLayout>
 </layout>

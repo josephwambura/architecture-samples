@@ -40,7 +40,7 @@
             app:onRefreshListener="@{viewmodel::refresh}"
             app:refreshing="@{viewmodel.dataLoading}">
 
-            <LinearLayout
+            <com.google.android.material.circularreveal.CircularRevealLinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
@@ -49,7 +49,7 @@
                 android:paddingRight="@dimen/activity_horizontal_margin"
                 android:paddingBottom="@dimen/activity_vertical_margin">
 
-                <LinearLayout
+                <com.google.android.material.circularreveal.CircularRevealLinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
@@ -59,15 +59,15 @@
                     android:paddingBottom="@dimen/activity_vertical_margin"
                     android:visibility="@{viewmodel.isDataAvailable ? View.GONE : View.VISIBLE}">
 
-                    <TextView
+                    <com.google.android.material.textview.MaterialTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/no_data"
                         android:textAppearance="?android:attr/textAppearanceLarge"
                         android:visibility="@{viewmodel.dataLoading ? View.GONE : View.VISIBLE}" />
-                </LinearLayout>
+                </com.google.android.material.circularreveal.CircularRevealLinearLayout>
 
-                <RelativeLayout
+                <com.google.android.material.circularreveal.CircularRevealRelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
@@ -79,7 +79,7 @@
 
                     <!-- android:paddingTop specified to temporarily work around -->
                     <!-- https://github.com/robolectric/robolectric/issues/4588 -->
-                    <CheckBox
+                    <com.google.android.material.checkbox.MaterialCheckBox
                         android:id="@+id/task_detail_complete_checkbox"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -89,7 +89,7 @@
                         android:onClick="@{(view) -> viewmodel.setCompleted(((CompoundButton)view).isChecked())}"
                         android:paddingTop="1dp" />
 
-                    <TextView
+                    <com.google.android.material.textview.MaterialTextView
                         android:id="@+id/task_detail_title_text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -98,7 +98,7 @@
                         android:text="@{viewmodel.task.title}"
                         android:textAppearance="?android:attr/textAppearanceLarge" />
 
-                    <TextView
+                    <com.google.android.material.textview.MaterialTextView
                         android:id="@+id/task_detail_description_text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -108,8 +108,8 @@
                         android:text="@{viewmodel.task.description}"
                         android:textAppearance="?android:attr/textAppearanceMedium" />
 
-                </RelativeLayout>
-            </LinearLayout>
+                </com.google.android.material.circularreveal.CircularRevealRelativeLayout>
+            </com.google.android.material.circularreveal.CircularRevealLinearLayout>
         </com.example.android.architecture.blueprints.todoapp.ScrollChildSwipeRefreshLayout>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton

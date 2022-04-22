@@ -16,10 +16,10 @@
 package com.example.android.architecture.blueprints.todoapp.tasks
 
 import android.graphics.Paint
-import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.android.architecture.blueprints.todoapp.data.Task
+import com.google.android.material.textview.MaterialTextView
 
 /**
  * [BindingAdapter]s for the [Task]s list.
@@ -32,7 +32,7 @@ fun setItems(listView: RecyclerView, items: List<Task>?) {
 }
 
 @BindingAdapter("app:completedTask")
-fun setStyle(textView: TextView, enabled: Boolean) {
+fun setStyle(textView: MaterialTextView, enabled: Boolean) {
     if (enabled) {
         textView.paintFlags = textView.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
     } else {

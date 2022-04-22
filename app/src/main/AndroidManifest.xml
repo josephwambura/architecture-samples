@@ -29,11 +29,14 @@
             android:name="com.example.android.architecture.blueprints.todoapp.tasks.TasksActivity"
             android:windowSoftInputMode="adjustResize"
             android:exported="true"
-            android:theme="@style/AppTheme.OverlapSystemBar">
+            android:theme="@style/AppTheme.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            <!-- This is added to handle a deep link -->
+            <nav-graph android:value="@navigation/nav_graph" />
         </activity>
     </application>
 
